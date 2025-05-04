@@ -139,6 +139,7 @@ public class VendingMachineController {
                 delay1.play();
             } catch (NumberFormatException ex) {
                 messageArea.setText("Please enter a valid amount.");
+                resetButton.setDisable(false); // Enable the reset button
             }
         }
     }
