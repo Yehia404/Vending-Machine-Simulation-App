@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #f9f9f9;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.vendingmachineproject.VendingMachineController">
+
+    <children>
+        <GridPane layoutX="10.0" layoutY="10.0" prefHeight="380.0" prefWidth="580.0" style="-fx-background-color: #ffffff; -fx-border-color: #cccccc; -fx-border-width: 1; -fx-background-radius: 10; -fx-border-radius: 10;">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="323.4000244140625" minWidth="321.0" prefWidth="321.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.99999999999994" minWidth="214.59997558593744" prefWidth="216.99999999999994" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints prefHeight="40.0" vgrow="NEVER" />
+                <RowConstraints maxHeight="234.20001220703125" minHeight="140.79996643066403" prefHeight="160.79996643066403" vgrow="ALWAYS" />
+                <RowConstraints maxHeight="158.20003356933591" minHeight="64.79998779296875" prefHeight="138.20003356933591" vgrow="NEVER" />
+            </rowConstraints>
+
+            <!-- Products List -->
+            <VBox alignment="TOP_LEFT" spacing="10.0" GridPane.rowSpan="3">
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Available Products" />
+                <ListView fx:id="productList" prefHeight="300.0" />
+            </VBox>
+
+            <!-- Title -->
+            <Label style="-fx-font-size: 22px; -fx-font-weight: bold;" text="Vending Machine" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+
+            <!-- Message Area -->
+            <TextArea fx:id="messageArea" editable="false" prefHeight="180.0" style="-fx-control-inner-background: #f3f3f3; -fx-font-size: 13px;" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <!-- Bottom Controls -->
+            <VBox alignment="TOP_LEFT" prefHeight="114.0" prefWidth="179.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+
+                <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Money">
+                    <VBox.margin>
+                        <Insets top="5.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                </Label>
+
+                <GridPane hgap="10.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="60" />
+                        <ColumnConstraints percentWidth="40" />
+                    </columnConstraints>
+
+                    <!-- Money Field -->
+                    <TextField fx:id="moneyField" prefHeight="26.0" prefWidth="153.0" promptText="Enter amount" GridPane.columnIndex="0" />
+
+                    <!-- Insert Button -->
+                    <Button fx:id="insertButton" maxWidth="Infinity" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Insert" GridPane.columnIndex="1" />
+                    <rowConstraints>
+                        <RowConstraints />
+                    </rowConstraints>
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                </GridPane>
+
+                <HBox alignment="CENTER_LEFT" spacing="10.0">
+                    <Label style="-fx-font-size: 14px;" text="Change:" />
+                    <Label fx:id="changeLabel" style="-fx-font-size: 14px; -fx-text-fill: #444;" />
+                    <padding>
+                        <Insets left="5.0" />
+                    </padding>
+                </HBox>
+
+                <!-- Right-aligned Reset Button -->
+                <HBox alignment="CENTER_RIGHT" spacing="10.0">
+                    <Button fx:id="resetButton" prefHeight="30.0" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Reset Machine" />
+                </HBox>
+            </VBox>
+
+        </GridPane>
+    </children>
+</AnchorPane>
