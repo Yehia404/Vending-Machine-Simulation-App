@@ -121,6 +121,7 @@ public class VendingMachineController {
                 currentState = VendingMachineState.MONEY_INSERTED;
                 messageArea.setText("Money inserted: $" + insertedMoney);
 
+                // Delay for 3 seconds for inserting money
                 PauseTransition delay1 = new PauseTransition(Duration.seconds(3));
                 delay1.setOnFinished(event -> {
                     // Check if money is enough for the selected product
